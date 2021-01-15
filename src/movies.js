@@ -1,5 +1,5 @@
 // Iteration 1: All directors? - Get the array of all directors.
-function getAllDirectors(moviesArr){
+function getAllDirectors(moviesArr) {
   let directorsArr = moviesArr.map((movie => {
     return movie.director
   }))
@@ -20,6 +20,19 @@ const howManyMovies = (movies) => {
 }
 
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals
+function ratesAverage(movies) {
+    if (movies.length === 0 ){
+      return 0;
+    }
+    let totalMovies = movies.reduce((acc, cur) => {
+    if (cur.rate === undefined){
+      return acc;
+    } else {
+      return acc + cur.rate;
+    }
+  }, 0);
+  return + (totalMovies/movies.length).toFixed(2);
+}
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 
